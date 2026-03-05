@@ -36,9 +36,9 @@ class MocoTrainer():
     def __init__(self,root_path) -> None:
         self.root_path = root_path
           
-        train_dataset = ImageDataset_train(image_pth=f"{self.root_path}/datasets/volumedata_4x.tif",image_split=0.8,subvol_shape=(16,128,128),scale_factor=8,is_inpaint=False)
+        train_dataset = ImageDataset_train(image_pth=f"{self.root_path}/datasets/x.tif",image_split=0.8,subvol_shape=(16,128,128),scale_factor=8,is_inpaint=False)
         self.train_dataloader = DataLoader(train_dataset,batch_size=64,shuffle=True)
-        test_dataset = ImageDataset_val(image_pth=f'{self.root_path}/datasets/volumedata_4x.tif',image_split=0.8,subvol_shape=(16,128,128),scale_factor=8,is_inpaint=False)
+        test_dataset = ImageDataset_val(image_pth=f'{self.root_path}/datasets/x.tif',image_split=0.8,subvol_shape=(16,128,128),scale_factor=8,is_inpaint=False)
         test_dataset.len = 512
         self.test_dataloader = DataLoader(test_dataset,batch_size=128)
         
@@ -131,9 +131,6 @@ class MocoTrainer():
         return logger, log_file
 
 
-
-
-
 if __name__=="__main__":
-    trainer = MocoTrainer(root_path='/home/glm/VEMamba')
+    trainer = MocoTrainer(root_path='/home/user/VEMamba')
     trainer.train()    
