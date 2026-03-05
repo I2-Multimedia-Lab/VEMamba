@@ -22,9 +22,12 @@ mamba_ssm : https://github.com/state-spaces/mamba/releases
 
 This project is built upon the excellent work from the following open-source repository:
 
-- [CDFormer](https://github.com/I2-Multimedia-Lab/CDFormer)
 - [SCST](https://github.com/ssj9596/SCST)
 - [IsoVEM](https://github.com/cbmi-group/IsoVEM)
+- [MambaIR](https://github.com/csguoh/MambaIR)
+- [CDFormer](https://github.com/I2-Multimedia-Lab/CDFormer)
+
+
 
 We thank the authors for making their code publicly available.  
 Our implementation is based on their work with several modifications and extensions.
