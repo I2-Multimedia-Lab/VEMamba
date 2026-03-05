@@ -203,8 +203,3 @@ class ImageDataset_val(Dataset):
     def __len__(self):
         return self.len
     
-if __name__ =="__main__":
-    dataset = ImageDataset_val(image_pth="/mnt/ssd2/glm/VEMamba/datasets/CREMI_Dataset_A_padded.tif",image_split=0.8,subvol_shape=(16,128,128),scale_factor=4,is_inpaint=False) # scale_factor=10 ,subvol_shape=(16,160,160)
-    dataloader = DataLoader(dataset,batch_size=1,shuffle=False,num_workers=10)
-    for i in dataloader:
-        print(i)
