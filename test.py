@@ -69,7 +69,7 @@ def test_func(args):
 
 
     moco = MoCo(base_encoder=Encoder).cuda()
-    moco.load_state_dict(torch.load('/mnt/ssd2/glm/VEMamba/checkpoints/moco/moco_4x/moco500.pth'),strict=False)
+    moco.load_state_dict(torch.load('model.pth'),strict=False)
     moco.eval()
     model = VEMamba(input_resolution=(16,128),upscales=args.test_upscale).cuda()
     model.load_state_dict(torch.load(args.test_ckpt_path),strict=False)
