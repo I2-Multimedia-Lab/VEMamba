@@ -72,7 +72,7 @@ pip install -r requirements.txt
 
 > ⚠️ **Note:** To avoid environment conflicts, we highly recommend installing the following core packages manually from their official releases:
 > * [causal-conv1d releases](https://github.com/Dao-AILab/causal-conv1d/releases)
-> * [mamba releases](https://github.com/state-spaces/mamba/releases)
+> * [mamba-ssm releases](https://github.com/state-spaces/mamba/releases)
 
 
 ---
