@@ -1,0 +1,10 @@
+{
+    "test_config_name": "demo_test",
+    "test_data_pth":"path",
+    "test_ckpt_path":"path",
+    "test_output_dir": "path",
+    "test_upscale":  4,
+    "test_shape":[16,128,128],
+    "test_overlap" :8
+
+}
