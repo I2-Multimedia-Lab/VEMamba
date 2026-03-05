@@ -7,7 +7,7 @@
     "train_num_epochs":200,
     "train_warmup_epochs":10,
     "train_lr":5e-4,
-    "train_upscale":4,  # 4,8,10
+    "train_upscale":4, 
     "train_subvol_shape" : [16,128,128],
     "input_resolution":[32,128],
 
