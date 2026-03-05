@@ -130,7 +130,7 @@ If you find this work or code useful for your research, please cite our CVPR 202
 ```bibtex
 @inproceedings{gao2026vemamba,
   title={VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba},
-  author={Gao, Longmi and Gao, Pan},
+  author={Longmi, Gao and Pan, Gao},
   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2026}
 }
