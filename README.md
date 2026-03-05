@@ -18,6 +18,20 @@ casual_conv1d : https://github.com/Dao-AILab/causal-conv1d/releases
 
 mamba_ssm : https://github.com/state-spaces/mamba/releases
 
+## Train
+stage1 : train moco to learn degradation
+
+train_moco.py
+
+stage2 : frozen moco, train backbone
+
+train.py
+
+## Test
+
+run test.py to generate the whole volume
+
+
 ## Acknowledgements
 
 This project is built upon the excellent work from the following open-source repository:
@@ -31,3 +45,7 @@ This project is built upon the excellent work from the following open-source rep
 
 We thank the authors for making their code publicly available.  
 Our implementation is based on their work with several modifications and extensions.
+
+## Citation
+
+
