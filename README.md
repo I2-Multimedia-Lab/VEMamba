@@ -125,7 +125,7 @@ This project is built upon the excellent work from the following open-source rep
 
 ## 📚 Citation
 
-If you find this work or code useful for your research, please cite our CVPR 2026 paper:
+If you find this work or code useful for your research, please cite our paper:
 
 ```bibtex
 @inproceedings{gao2026vemamba,
