@@ -193,10 +193,10 @@ class Trainer():
 if __name__ == "__main__":
     import os
     os.environ["CUDA_VISIBLE_DEVICES"]="0"
-    parser = argparse.ArgumentParser(description='Parameters for IsoVEM Training')
+    parser = argparse.ArgumentParser(description='Parameters for VEMamba Training')
     parser.add_argument('--train_config_path', help='path of train config file', type=str,
                         default="config/train_4x_cremi.json")
     with open(parser.parse_args().train_config_path, 'r', encoding='UTF-8') as f:
         train_config = json.load(f)
-    trainer = Trainer(root_path='/mnt/ssd2/glm/VEMamba',arg=train_config)
+    trainer = Trainer(root_path='/home/user/VEMamba',arg=train_config)
     trainer.train()
