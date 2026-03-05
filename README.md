@@ -1,4 +1,4 @@
-# VEMamba
+# VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba
 
 <p align="center">
 
@@ -16,13 +16,11 @@
 
 </p>
 
-Official PyTorch implementation of  
+<p align="center">
+<img src="figs/main.png" width="85%">
+</p>
 
-**VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba**
-
-📄 Paper: https://arxiv.org/abs/2603.00887  
-💻 Code: https://github.com/I2-Multimedia-Lab/VEMamba
-
+*Figure: Overall architecture of VEMamba.*
 ---
 
 # 🔥 News
@@ -32,62 +30,127 @@ Official PyTorch implementation of
 
 ---
 
-# 📖 Introduction
+# 🧠 Method Overview
 
-Volume Electron Microscopy (VEM) enables high-resolution **3D visualization of biological tissues**, but many imaging techniques produce **anisotropic volumes** where the axial resolution is much lower than the lateral resolution. This anisotropy significantly affects visualization and downstream biological analysis. :contentReference[oaicite:0]{index=0}  
+<p align="center">
+<img src="figs/block.png" width="85%">
+</p>
 
-To address this issue, we propose **VEMamba**, an efficient framework for **isotropic reconstruction of VEM data**.
+*Figure: The Detail of VEMamba Module.*
 
-Our method introduces a **3D Dependency Reordering paradigm** based on state space models (Mamba), which efficiently captures volumetric spatial dependencies while maintaining low computational complexity. :contentReference[oaicite:1]{index=1}  
+The VEMamba pipeline contains four stages:
 
-Key contributions include:
+1. **Shallow feature extraction**
+2. **Degradation representation learning (MoCo)**
+3. **Deep feature extraction with Residual Volume Mamba Groups**
+4. **Reconstruction module**
 
-- **ALCSSM (Axial-Lateral Chunking Selective Scan Module)**  
-  Reorders 3D spatial dependencies into optimized sequences for Mamba modeling.
+The core component is the **VEMamba Module (VEMM)**:
 
-- **DWAM (Dynamic Weights Aggregation Module)**  
-  Adaptively aggregates multi-directional scan features.
-
-- **MoCo-based degradation learning**  
-  Learns degradation-aware representations to better simulate realistic anisotropic EM data.
-
-Extensive experiments demonstrate that **VEMamba achieves strong reconstruction performance with significantly lower computational cost**.
+- ALCSSM → multi-directional 3D dependency scanning  
+- SSM → global dependency modeling  
+- DWAM → dynamic feature aggregation
 
 ---
 
-## Dataset Download
-- EPFL Dataset : https://www.epfl.ch/labs/cvlab/data/data-em/
-- CREMI Dataset : https://cremi.org/data/
-## Environment
-- python = 3.10
-- torch = 2.4.0
-- causal_conv1d = 1.5.2
-- mamba_ssm = 2.2.5
+# 📂 Dataset
+
+We evaluate our method on two public VEM datasets.
+
+## EPFL Dataset
+
+https://www.epfl.ch/labs/cvlab/data/data-em/
+
+- FIB-SEM hippocampus dataset
+- Resolution: **5×5×5 nm**
+- Contains annotated mitochondria segmentation labels. :contentReference[oaicite:2]{index=2}  
+
+---
+
+## CREMI Dataset
+
+https://cremi.org/data/
+
+- ssTEM dataset of *Drosophila melanogaster* brain
+- Resolution: **4×4×40 nm**
+- Contains three training volumes (A, B, C). :contentReference[oaicite:3]{index=3}  
+
+---
+
+---
+
+# ⚙️ Environment
+
+Recommended environment:
+
+```
+
+python = 3.10
+torch = 2.4.0
+causal_conv1d = 1.5.2
+mamba_ssm = 2.2.5
+
+````
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+````
+
+⚠️ To avoid environment conflicts, we recommend installing the following packages manually.
+
+**causal_conv1d**
+
+```
+https://github.com/Dao-AILab/causal-conv1d/releases
+```
+
+**mamba_ssm**
+
+```
+https://github.com/state-spaces/mamba/releases
+```
+
+---
+
+# 🚀 Training
+Training consists of **two stages**.
+
+---
+
+## Stage 1: Degradation Learning (MoCo)
+
+Train the MoCo encoder to learn degradation representations.
+
+```bash
+python train_moco.py
+```
+
+---
+
+## Stage 2: Reconstruction Training
+
+Freeze the MoCo encoder and train the reconstruction backbone.
+
+```bash
+python train.py
+```
+
+---
+
+# 🧪 Testing
+
+To reconstruct the full volume:
+
+```bash
+python test.py
+```
+
+The reconstructed isotropic volume will be saved in the output directory.
 
 
-Then use pip install -r requirements.txt
-
-Note: To avoid environment conflicts, it is recommended to install the casual_conv1d and mamba_ssm libraries locally.
-
-casual_conv1d : https://github.com/Dao-AILab/causal-conv1d/releases
-
-mamba_ssm : https://github.com/state-spaces/mamba/releases
-
-## Train
-stage1 : train moco to learn degradation
-
-train_moco.py
-
-stage2 : frozen moco, train backbone
-
-train.py
-
-## Test
-
-run test.py to generate the whole volume
-
-
-## Acknowledgements
+# 🙏Acknowledgements
 
 This project is built upon the excellent work from the following open-source repository:
 
@@ -97,10 +160,18 @@ This project is built upon the excellent work from the following open-source rep
 - [CDFormer](https://github.com/I2-Multimedia-Lab/CDFormer)
 
 
+We thank the authors for making their code publicly available.
 
-We thank the authors for making their code publicly available.  
-Our implementation is based on their work with several modifications and extensions.
+---
 
-## Citation
+# 📚Citation
+If you find this work useful, please cite:
 
-
+```bibtex
+@article{gao2026vemamba,
+  title={VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba},
+  author={Gao, Longmi and Gao, Pan},
+  journal={arXiv preprint arXiv:2603.00887},
+  year={2026}
+}
+```
