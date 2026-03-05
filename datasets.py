@@ -212,10 +212,3 @@ class ImageDataset_val(Dataset):
     def __len__(self):
         return self.len
 
-
-if __name__ =="__main__":
-    root_path = '/home/glm/VEMamba'
-    dataset = ImageDataset_train(image_pth=f"{root_path}/datasets/volumedata_4x.tif",image_split=0.8,subvol_shape=(16,128,128),scale_factor=4,is_inpaint=False) # scale_factor=10 ,subvol_shape=(16,160,160)
-    dataloader = DataLoader(dataset,batch_size=4,shuffle=True,num_workers=10)
-    for i in dataloader:
-        print(i)
