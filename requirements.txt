@@ -1,0 +1,9 @@
+torch==2.4.0
+torchvision==0.19.0
+scikit-image
+h5py
+timm==1.0.19 # pip install timm --no-deps
+opencv-python
+pytorch_msssim
+PyQt5
+piq==0.6.0
