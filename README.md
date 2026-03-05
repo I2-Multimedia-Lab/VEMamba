@@ -17,3 +17,14 @@ Note: To avoid environment conflicts, it is recommended to install the casual_co
 casual_conv1d : https://github.com/Dao-AILab/causal-conv1d/releases
 
 mamba_ssm : https://github.com/state-spaces/mamba/releases
+
+## Acknowledgements
+
+This project is built upon the excellent work from the following open-source repository:
+
+- [CDFormer](https://github.com/I2-Multimedia-Lab/CDFormer)
+- [SCST](https://github.com/ssj9596/SCST)
+- [IsoVEM](https://github.com/cbmi-group/IsoVEM)
+
+We thank the authors for making their code publicly available.  
+Our implementation is based on their work with several modifications and extensions.
