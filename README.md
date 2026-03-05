@@ -6,7 +6,7 @@
 [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/I2-Multimedia-Lab/VEMamba)
 [![Conference](https://img.shields.io/badge/CVPR-2026-green)](#)
 
-<img src="figs/main.png" width="100%" alt="VEMamba Architecture">
+<img src="figs/main.png" width="90%" alt="VEMamba Architecture">
 
 *Overall architecture of VEMamba.*
 </div>
@@ -15,16 +15,18 @@
 
 ## 🔥 News
 
-* **[2026.03]** 🎉 Our paper has been accepted to **CVPR 2026**!
-* **[2026.03]** 📄 Paper released on [arXiv](https://arxiv.org/abs/2603.00887).
+
+
 * **[2026.03]** 💻 Code is now publicly available.
+* **[2026.03]** 📄 Paper released on [arXiv](https://arxiv.org/abs/2603.00887).
+* **[2026.02]** 🎉 Our paper has been accepted to **CVPR 2026**!
 
 ---
 
 ## 🧠 Method Overview
 
 <div align="center">
-<img src="figs/block.png" width="100%" alt="VEMamba Module Detail">
+<img src="figs/block.png" width="90%" alt="VEMamba Module Detail">
 
 *The Detail of the VEMamba Module.*
 </div>
